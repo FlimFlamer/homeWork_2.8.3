@@ -15,12 +15,11 @@ public class Author {
     }
 
     @Override
-    public boolean equals(Object author) {
-        if(this.getClass() != author.getClass()){
-            return false;}
-
-        Author author2 = (Author) author;
-        return authorName.equals(author2.authorName) && authorFamily.equals(author2.authorFamily);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(authorName, author.authorName) && Objects.equals(authorFamily, author.authorFamily);
     }
 
     @Override

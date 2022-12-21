@@ -21,13 +21,11 @@ public class Book {
     }
 
     @Override
-    public boolean equals(Object book) {
-        if (this.getClass() != book.getClass()) {
-            return false;
-        }
-
-        Book book2 = (Book) book;
-        return bookName.equals(book2.bookName);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return yearPublishing == book.yearPublishing && Objects.equals(bookName, book.bookName) && Objects.equals(author, book.author);
     }
 
     @Override
